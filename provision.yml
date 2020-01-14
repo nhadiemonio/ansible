@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+    - name: install aptitude
+      apt:
+        name: "aptitude"
+        state: latest
+  
+    - name: apt upgrade
+      apt:
+        name: "*"
+        update_cache: yes
+        state: latest 
+  
